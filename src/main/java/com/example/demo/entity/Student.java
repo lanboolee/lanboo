@@ -8,7 +8,7 @@ import lombok.Data;
  */
 @Data
 public class Student {
-    private String stuid;
+    private String stuiD;
     private String sname;
     private Integer gkfs;
 }

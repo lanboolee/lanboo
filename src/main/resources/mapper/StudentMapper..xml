@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.dao.StudentDao">
+    <select id="findAllStudent" resultType="com.example.demo.entity.Student">
+      select * from student
+    </select>
+    <select id ="findTest" resultType="com.example.demo.entity.Student">
+        select a.stuid,a.s_name snamee,a.gkfs gkfs,b.id stuid,b.g_kfs gkfs
+        from student a left join teacher b on a.stuid = b.id
+    </select>
+</mapper>

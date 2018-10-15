@@ -23,6 +23,7 @@ public class GlobleExceptionCatch {
     @ResponseBody
     public MessageBody defaltErrorHandler(HttpServletRequest request,Throwable t){
         MessageBody body = MessageBody.getErrorMessageBody("500","系统出错啦");
+        logger.error("全局拦截异常,异常信息为 StackTrce = {},ErrorMessage = {}",t.getStackTrace(),t.getMessage());
         return body;
     }
 }
