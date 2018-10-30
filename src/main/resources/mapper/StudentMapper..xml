@@ -8,4 +8,12 @@
         select a.stuid,a.s_name snamee,a.gkfs gkfs,b.id stuid,b.g_kfs gkfs
         from student a left join teacher b on a.stuid = b.id
     </select>
+
+    <insert id="batchInsert" parameterType="list">
+        insert into student
+        values
+        <foreach collection="list" item="item" open="(" close=")" separator=",">
+            (item.stuId,item.sname.item.gkfs)
+        </foreach>
+    </insert>
 </mapper>
